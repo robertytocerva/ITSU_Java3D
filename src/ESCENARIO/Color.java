@@ -34,7 +34,7 @@ public class Color
 
         TransparencyAttributes ta = new TransparencyAttributes();
         ta.setTransparencyMode(TransparencyAttributes.BLENDED);
-        ta.setTransparency(nivel); // entre 0.0 (sólido) y 1.0 (invisible)
+        ta.setTransparency(nivel);
         app.setTransparencyAttributes(ta);
 
         ColoringAttributes ca = new ColoringAttributes(new Color3f(1f, 1f, 1f), ColoringAttributes.SHADE_FLAT);

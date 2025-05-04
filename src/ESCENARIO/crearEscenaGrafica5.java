@@ -32,38 +32,35 @@ import javax.swing.Timer;
 import javax.vecmath.Color3f;
 import javax.vecmath.Point3d;
 import javax.vecmath.Point3f;
-import javax.vecmath.Vector3f;
+
 
 public class crearEscenaGrafica5 {  
     public BranchGroup bgRaiz = new BranchGroup();
-    Texturas textura = new Texturas();
     TransformGroup tgSalon;  
   
-    public ArrayList<ObjetoConColision> obstaculos = new ArrayList<>();/////////colisiones
+    public ArrayList<ObjetoConColision> obstaculos = new ArrayList<>();
     public ArrayList<ObjetoConColision> obstaculos2 = new ArrayList<>();
-    public ArrayList<ObjetoConColision> obstaculosE = new ArrayList<>();/////////colisiones
-//    ControladorPuertas controladorPuertas = new ControladorPuertas();
+    public ArrayList<ObjetoConColision> obstaculosE = new ArrayList<>();
+
 
     private float anguloCamara = 0f;
     private float pitchCamara = 0.0f;
-    private Transform3D tCamara = new Transform3D();
+
     private TransformGroup tgCamara;
-private float distanciaCamara = 6.0f;   // distancia hacia atrás
-private float alturaCamara = 3.0f;      // altura sobre el personaje
-public float orientacion = (float)-Math.PI / 2.0f;
+
+
+    public float orientacion = (float)-Math.PI / 2.0f;
   
-    //private static final double DIST_CAM =16.0, ALT_CAM =15.2;//////TERCER PERSONA
-////
-    //private static final double DIST_CAM =16.0, ALT_CAM =10.2;///altura oara hacer modificaciones las estructuras
-    private static final double DIST_CAM =1.0, ALT_CAM =1.2;///altura PRIMERA PERSONA
+
+    private static final double DIST_CAM =2.0, ALT_CAM =2;
 
     crearEscenaGrafica4 personaje;
     
     public TransformGroup tgUniverso;
-    public TransformGroup tgMundo;
+
     public TransformGroup tgEsfera;
     
-    private double interpolacion = 0.1;
+
     public Vector3d offsetCamara = new Vector3d(0.0, -2.0, -10.0);
 
     public crearEscenaGrafica5() {
@@ -80,7 +77,7 @@ public float orientacion = (float)-Math.PI / 2.0f;
 
         double pasillo = -9.0;
 
-        // IZQUIERDA
+
         SalonIzF salon3 = new SalonIzF(false, obstaculos);
         TransformGroup tgSalon3 = salon3.getTransformGroup();
         Transform3D pos3 = new Transform3D();
@@ -112,7 +109,7 @@ public float orientacion = (float)-Math.PI / 2.0f;
         Cubiculo cubiculo = new Cubiculo(obstaculos, new Vector3d(-4.0, 0.5, 17.0));
         tgTodosLosSalones.addChild(cubiculo);
 
-        // DERECHA
+
         SalonD salon1 = new SalonD(false, obstaculos);
         tgSalon = salon1.getTransformGroup();
         tgTodosLosSalones.addChild(tgSalon);
@@ -202,7 +199,7 @@ escala.mul(rotacion);
     Vector3d p = new Vector3d(); 
     tp.get(p);
 
-    // Posición de la cámara (ojo)
+
     Vector3d eye = new Vector3d(
     p.x - DIST_CAM * Math.sin(orientacion),
     p.y + ALT_CAM,
@@ -212,7 +209,7 @@ escala.mul(rotacion);
     Point3d target = new Point3d(p.x, p.y + 1.0, p.z); 
     Transform3D view = new Transform3D();
     view.lookAt(new Point3d(eye), target, new Vector3d(0, 1, 0));
-    view.invert(); // Importante
+    view.invert();
 
     tgCamara.setTransform(view);
 }
@@ -231,7 +228,7 @@ escala.mul(rotacion);
     Vector3d intento = new Vector3d(pos.x + dx, pos.y, pos.z + dz);
     boolean movimiento = false;
 
-    // Si no hay colisión directa, aplicar movimiento total
+
     if (!hayColision(intento)) {
         aplicarTransformConRotacion(intento);
         movimiento = true;
@@ -251,7 +248,7 @@ escala.mul(rotacion);
             }
         }
     }
-    // Escape lateral extendido si está pegado
+
 if (!movimiento) {
     double fuerzaLateral = 0.15;
 
@@ -378,11 +375,6 @@ ArrayList<ObjetoConColision> lista = (y > 3.0) ? obstaculos2 : obstaculos;
             (float) (posObj.x - ancho), (float) (posObj.x + ancho),
             (float) (posObj.z - largo), (float) (posObj.z + largo)
         );
-
-        if (bbPersonaje.intersects(bbObstaculo)) {
-            System.out.println("❌ Colisión con: " + obj.getNombre());
-            return true;
-        }
     }
     return false;
 }

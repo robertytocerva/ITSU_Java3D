@@ -1,7 +1,6 @@
 package Muebles;
 
 import colisiones.ObjetoConColision;
-import com.sun.j3d.utils.geometry.Box;
 import javax.media.j3d.Appearance;
 import javax.media.j3d.ColoringAttributes;
 import javax.media.j3d.Transform3D;
@@ -13,7 +12,6 @@ import java.util.List;
 
 public class Escaleras {
     private TransformGroup tgEscalera = new TransformGroup();
-private TransformGroup tgpiso = new TransformGroup();
     public Escaleras(List<ObjetoConColision> listaObstaculos) {
         tgEscalera.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
         tgEscalera.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
@@ -21,8 +19,7 @@ private TransformGroup tgpiso = new TransformGroup();
         Appearance apariencia = new Appearance();
         ColoringAttributes ca = new ColoringAttributes(new Color3f(0.8f, 0.8f, 0.8f), ColoringAttributes.NICEST);
         apariencia.setColoringAttributes(ca);
-//        tgpiso.addChild(Pared.crearPared(100.0f, 0.1f, 100.0f, new Vector3d(1.5, -0.1, 0.0), crearApariencia(160, 160, 160)));
-//        
+
         float ancho = 1.5f;
         float alto = 0.15f;
         float profundo = 0.3f;
@@ -42,10 +39,9 @@ private TransformGroup tgpiso = new TransformGroup();
 
         tgEscalera.addChild(tgRotada1);
 
-        // Piso central
         tgEscalera.addChild(Pared.crearPared(2.2f, 0.3f, 3.8f, new Vector3d(-2.9, 1.8, 1.8), crearApariencia(228, 199, 124)));
 
-        // Tramo 2
+
         TransformGroup tgRotada2 = new TransformGroup();
         Transform3D rotacionY2 = new Transform3D();
         rotacionY2.rotY(-Math.PI / 2);

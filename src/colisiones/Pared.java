@@ -22,7 +22,7 @@ public class Pared {
         Box box = new Box(ancho / 2, alto / 2, profundo / 2, apariencia);
         tgPared.addChild(box);
 
-        // Añadir a la lista de obstáculos
+
         listaObstaculos.add(new ObjetoConColision(nombre, tgPared, ancho, profundo));
 
         return tgPared;

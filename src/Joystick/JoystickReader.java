@@ -27,9 +27,5 @@ public class JoystickReader extends Thread {
             scanner = new Scanner(input);
         } 
     }
-    public void cerrar() {
-        if (puerto != null && puerto.isOpen()) {
-            puerto.closePort();
-        }
-    }
+
 }

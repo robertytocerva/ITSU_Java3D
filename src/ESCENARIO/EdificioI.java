@@ -1,25 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ESCENARIO;
 
 
-import Muebles.Administrativo;
-import Muebles.SalonD;
-import Muebles.SalonDF;
-import Muebles.SalonIz;
-import Muebles.SalonIzF;
-import Muebles.Cubiculo2;
-import Muebles.Cubiculo;
+
 
 import Joystick.JoystickReader;
-
 import Joystick.MovimientoKeyListener;
-
-import Muebles.wc;
-import Personaje.crearEscenaGrafica4;
-import com.fazecast.jSerialComm.SerialPort;
 import com.sun.j3d.utils.universe.SimpleUniverse;
 import java.awt.GraphicsConfiguration;
 import java.awt.event.KeyAdapter;
@@ -28,15 +14,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.InputStream;
-import java.util.ArrayList;
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.Canvas3D;
-import javax.media.j3d.Transform3D;
-import javax.media.j3d.TransformGroup;
 import javax.swing.SwingUtilities;
-import javax.vecmath.Point3d;
-import javax.vecmath.Vector3d;
 
 public class EdificioI extends javax.swing.JFrame {
 crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
@@ -46,7 +26,7 @@ crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
 
     public EdificioI() {
         initComponents();
-    // Crear lienzo 3D
+
         GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
         Canvas3D lienzo = new Canvas3D(config);
         lienzo.setBounds(20, 20, 1000, 900);
@@ -54,12 +34,11 @@ crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
         lienzo.requestFocus();
         this.add(lienzo);
         this.setBounds(100, 50, 1000, 1000);
-        
-        // Crear listener para teclado y joystick
+
         MovimientoKeyListener listener = new MovimientoKeyListener(creaEscena.personaje, creaEscena);
         lienzo.addKeyListener(listener);
 
-        // Crear universo y agregar escena
+
         BranchGroup root = new BranchGroup();
         root.addChild(creaEscena.bgRaiz);
         
@@ -96,7 +75,7 @@ crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
             }
         });
 
-        // Click para recuperar enfoque
+
         lienzo.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -105,8 +84,7 @@ crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
         });
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -159,36 +137,11 @@ crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EdificioI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EdificioI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EdificioI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EdificioI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EdificioI().setVisible(true);
@@ -196,9 +149,9 @@ crearEscenaGrafica5 creaEscena = new  crearEscenaGrafica5();
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    // End of variables declaration//GEN-END:variables
+
 }

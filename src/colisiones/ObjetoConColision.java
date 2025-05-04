@@ -18,5 +18,5 @@ public class ObjetoConColision {
     public TransformGroup getTransformGroup() { return tg; }
     public double getAncho() { return ancho; }
     public double getLargo() { return largo; }
-    public String getNombre() { return nombre; }
+
 }

@@ -4,18 +4,12 @@ import ESCENARIO.crearEscenaGrafica5;
 import Joystick.JoystickReader;
 import Joystick.MovimientoKeyListener;
 import com.sun.j3d.utils.universe.SimpleUniverse;
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.BorderLayout;
-import java.awt.Frame;
 import java.awt.GraphicsConfiguration;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.Canvas3D;
-import javax.media.j3d.TransformGroup;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class Personaje extends JFrame {
@@ -27,14 +21,12 @@ public class Personaje extends JFrame {
     public Personaje() {
         super("Personaje con Joystick");
 
-        // 1) Canvas y Universo
         GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
         Canvas3D canvas3D = new Canvas3D(config);
         this.setLayout(new BorderLayout());
         this.add(canvas3D, BorderLayout.CENTER);
         this.setBounds(300, 50, 840, 870);
 
-        // 2) Escena del personaje
         creaEscena = new crearEscenaGrafica4();
         BranchGroup scene = creaEscena.getBranchGroup();  // usa el método getter
 
@@ -42,18 +34,14 @@ public class Personaje extends JFrame {
         universe.getViewingPlatform().setNominalViewingTransform();
         universe.addBranchGraph(scene);
 
-        // 3) KeyListener para W/A/S/D y rotación
         movListener = new MovimientoKeyListener(creaEscena,creaEscena5);
         canvas3D.addKeyListener(movListener);
 
-        // 4) Hacer focus para recibir teclas
         canvas3D.setFocusable(true);
         canvas3D.requestFocusInWindow();
 
-        // 5) ¡Arrancar joystick!
         new Thread(new JoystickReader(movListener, "COM3")).start();
 
-        // 6) Manejo de cierre
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent we) {
                 System.exit(0);
@@ -93,6 +81,5 @@ public class Personaje extends JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
+
 }

@@ -7,6 +7,7 @@ import javax.vecmath.Vector3d;
 import colisiones.Pared;
 import java.util.List;
 
+
 public class Inodoro {
     private TransformGroup tgInodoro;
 

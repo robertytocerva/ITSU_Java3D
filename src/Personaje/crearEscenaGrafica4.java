@@ -3,27 +3,11 @@ package Personaje;
 
 import com.sun.j3d.utils.behaviors.mouse.MouseRotate;
 import com.sun.j3d.utils.geometry.Box;
-import com.sun.j3d.utils.geometry.ColorCube;
 import com.sun.j3d.utils.geometry.Primitive;
 import com.sun.j3d.utils.geometry.Sphere;
-import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.Delayed;
-import javax.media.j3d.Alpha;
-import javax.media.j3d.Appearance;
-import javax.media.j3d.BoundingSphere;
-import javax.media.j3d.BranchGroup;
-import javax.media.j3d.RotationInterpolator;
-import javax.media.j3d.Transform3D;
-import javax.media.j3d.TransformGroup;
+import javax.media.j3d.*;
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
-/////////////LIBRERIAS PARA AGREGAR LA LUZ
-import javax.media.j3d.*;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.vecmath.*;
 
 
@@ -155,12 +139,10 @@ public class crearEscenaGrafica4 {
         tgSpPrnIzq.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
         
     
-        // Crea una apariencia semitransparente blanca
-Appearance appTransparente = Color.setSemiTransparente(0.5f);
 
-// Crea el box con apariencia transparente en todas las caras
-Box bxMundo = new Box(0.5f, -0.5f, 0.4f, Box.GENERATE_NORMALS, Color.setTransparente());
+    Appearance appTransparente = Color.setSemiTransparente(0.5f);
 
+        Box bxMundo = new Box(0.5f, -0.5f, 0.4f, Box.GENERATE_NORMALS, Color.setTransparente());
         Box bxPanza = new Box(0.20f, 0.3f, 0.1f, paraTextura,textura.crearTexturas("aTorso.jpg"));
         bxPanza.setAppearance(0,textura.crearTexturas("fTorso.jpg"));
         bxPanza.setAppearance(2,textura.crearTexturas("lTorso.jpg"));
@@ -258,13 +240,13 @@ Box bxMundo = new Box(0.5f, -0.5f, 0.4f, Box.GENERATE_NORMALS, Color.setTranspar
         
         float intensidad = 1.0f;
         // Luz lateral derecha
-addPointLight(20.0f, 15.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
+        addPointLight(20.0f, 15.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
 
-// Luz lateral izquierda
-addPointLight(-20.0f, 15.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
+        // Luz lateral izquierda
+        addPointLight(-20.0f, 15.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
 
-// Luz centro bajo
-addPointLight(0.0f, 12.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
+        // Luz centro bajo
+        addPointLight(0.0f, 12.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
 
     }
     public void addPointLight(float x, float y, float z, float r, float g, float b) {
@@ -320,14 +302,7 @@ addPointLight(0.0f, 12.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
         leerArticulacion.mul(moverArticulacion);
         tg.setTransform(leerArticulacion);
     }
-    public Vector3d getPosicionPersonaje() {
-    Transform3D t3d = new Transform3D();
-    tgPanza.getTransform(t3d);
 
-    Vector3d pos = new Vector3d();
-    t3d.get(pos);
-    return pos;
-}
 
 
      public void Caminar()
@@ -399,21 +374,8 @@ addPointLight(0.0f, 12.0f, 0.0f, r*intensidad, g*intensidad, b*intensidad);
         return bgRaiz;
     }
 
-    // Método que devuelve la bounding box actual del personaje
-public BoundingRect getBoundingRectPersonaje() {
-    Transform3D transform = new Transform3D();
-    tgPanza.getTransform(transform);
-    Vector3f pos = new Vector3f();
-    transform.get(pos);
 
-    float halfWidth = 0.20f;
-    float halfDepth = 0.23f;
 
-    return new BoundingRect(pos.x - halfWidth, pos.x + halfWidth,
-                            pos.z - halfDepth, pos.z + halfDepth);
-}
-
-// Método que simula la bounding box en una posición específica (con adelanto según orientación)
 public static BoundingRect getBoundingRectPersonaje(Vector3d posicion, float orientacion) {
     float halfWidth = 0.23f;
     float halfDepth = 0.23f;
@@ -442,50 +404,17 @@ public static class BoundingRect {
         this.maxZ = maxZ;
     }
 
-    public boolean intersects(BoundingRect other) {
-        return (this.maxX >= other.minX && this.minX <= other.maxX &&
-                this.maxZ >= other.minZ && this.minZ <= other.maxZ);
-    }
 }
 
      
-    float edificioMinX = -5.0f;
-    float edificioMaxX = 5.0f;
-    float edificioMinZ = -5.0f;
-    float edificioMaxZ = 5.0f;
 
 
-public void moverPersonaje(float dx, float dz) {
-    
-    TrasladarGT(tgPanza, dx, 0.0f, dz);
-    
-    BoundingRect bbPersonaje = getBoundingRectPersonaje();
-    
-    if (bbPersonaje.minX < edificioMinX || bbPersonaje.maxX > edificioMaxX ||
-        bbPersonaje.minZ < edificioMinZ || bbPersonaje.maxZ > edificioMaxZ) {
-            
-        TrasladarGT(tgPanza, -dx, 0.0f, -dz);
-    }
-}
 
-public TransformGroup tgPiernaIzquierda;
-public TransformGroup tgPiernaDerecha;
-public TransformGroup tgBrazoIzquierdo;
-public TransformGroup tgBrazoDerecho;
 
-public TransformGroup getTgPiernaIzquierda() { return tgPiernaIzquierda; }
 
-public TransformGroup getTgPiernaDerecha() {return tgPiernaDerecha;}
 
-public TransformGroup getTgBrazoIzquierdo() {return tgBrazoIzquierdo;}
 
-public TransformGroup getTgBrazoDerecho() {return tgBrazoDerecho;}
 
-   public Transform3D getTransformPersonaje() {
-    Transform3D t3d = new Transform3D();
-    tgPanza.getTransform(t3d); // o el TransformGroup principal del personaje
-    return t3d;
-}
 public static Appearance setSemiTransparente(float alpha) {
         Appearance apariencia = new Appearance();
         ColoringAttributes ca = new ColoringAttributes();

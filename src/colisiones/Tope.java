@@ -16,16 +16,16 @@ public class Tope {
         t3d.setTranslation(posicion);
         tgTope.setTransform(t3d);
 
-        Appearance apariencia = Color.setTransparente(); // Puedes cambiarlo si quieres otro color/transparencia
+        Appearance apariencia = Color.setTransparente();
 
-        // Se crea el objeto con dimensiones enviadas
+
         tgTope.addChild(Pared.crearParedConColision(
             ancho,
             alto,
             profundo,
             new Vector3d(0.0, 0.0, 0.0), // relativo al centro del tope
             apariencia,
-            "Tope", // Nombre de colisión, puedes pasarlo como parámetro si quieres también
+            "Tope",
             listaObstaculos
         ));
     }

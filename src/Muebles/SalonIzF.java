@@ -15,7 +15,7 @@ public class SalonIzF extends BranchGroup {
 
     public SalonIzF(boolean conPiso,List<ObjetoConColision> listaObstaculos) {
         
-     tgSalon = new TransformGroup();
+        tgSalon = new TransformGroup();
         tgSalon.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
         tgSalon.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
      
@@ -32,61 +32,57 @@ public class SalonIzF extends BranchGroup {
         tgSalon.addChild(miTope3.getTransformGroup());
 
         
-Tope miTopePilar1 = new Tope(new Vector3d(4.7, 1.5, -9.1), 0.1f, 3.0f, 0.3f, listaObstaculos);
-tgSalon.addChild(miTopePilar1.getTransformGroup());
+        Tope miTopePilar1 = new Tope(new Vector3d(4.7, 1.5, -9.1), 0.1f, 3.0f, 0.3f, listaObstaculos);
+        tgSalon.addChild(miTopePilar1.getTransformGroup());
 
-//tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(4., 1.5,-9.1), crearApariencia(0,0,255)));
+
 
         
         
         
         
 
-tgSalon.addChild(Pared.crearPared(3.0f, 1.4f, 0.2f, new Vector3d(0.5, 1.8, -2.9), crearApariencia(255, 255, 255))); // pizarrón
-// Pared trasera (nuevo pizarrón)
-tgSalon.addChild(Pared.crearPared(6.0f, 3.0f, 0.1f, new Vector3d(0.0, 1.5, -3.0), crearApariencia(254, 216, 116)));
+        tgSalon.addChild(Pared.crearPared(3.0f, 1.4f, 0.2f, new Vector3d(0.5, 1.8, -2.9), crearApariencia(255, 255, 255)));
+        tgSalon.addChild(Pared.crearPared(6.0f, 3.0f, 0.1f, new Vector3d(0.0, 1.5, -3.0), crearApariencia(254, 216, 116)));
 
-// Puerta en lado izquierdo
-tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(-3.0, 1.5, -2.8), crearApariencia(228, 199, 124)));
-tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 4.3f, new Vector3d(-3.0, 1.5, 0.8), crearApariencia(228, 199, 124)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(-3.0, 1.5, -2.8), crearApariencia(228, 199, 124)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 4.3f, new Vector3d(-3.0, 1.5, 0.8), crearApariencia(228, 199, 124)));
 
 
-tgSalon.addChild(Pared.crearPared(0.4f, 2.8f, 0.90f, new Vector3d(-2.8, 1.3, 0.0), crearApariencia(240, 210, 135)));
-//tgSalon.addChild(Pared.crearPared(0.1f, 0.8f, 1.3f, new Vector3d(-3.0, 2.6, -2.0), crearApariencia(228, 199, 124), "puertaSupIzq", listaObstaculos));
-
-//// Pared derecha (azul)
-tgSalon.addChild(Pared.crearPared(0.1f, 1.0f, 6.0f, new Vector3d(3.0, 0.5, 0.0), crearApariencia(228, 199, 124)));
+        tgSalon.addChild(Pared.crearPared(0.4f, 2.8f, 0.90f, new Vector3d(-2.8, 1.3, 0.0), crearApariencia(240, 210, 135)));
 
 
-tgSalon.addChild(Pared.crearPared(0.4f, 3.0f, 0.90f, new Vector3d(2.8, 1.5, 0.0), crearApariencia(240, 210, 135)));
-tgSalon.addChild(Pared.crearPared(0.1f, 0.6f, 6.0f, new Vector3d(3.0, 2.7, 0.0), crearApariencia(228, 199, 124)));
-
-// Pared del frente (amarilla)
-tgSalon.addChild(Pared.crearPared(6.0f, 3.0f, 0.1f, new Vector3d(0.0, 1.5, 3.0), crearApariencia(254, 216, 116)));
-tgSalon.addChild(Pared.crearPared(3.0f, 1.4f, 0.2f, new Vector3d(0.0, 1.8, -2.9), crearApariencia(255, 255, 255)));
-
-// Ventanas
-tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, -2.1), Color.setSemiTransparente(0.2f)));
-tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, -1.0), Color.setSemiTransparente(0.2f)));
-tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, 2.1), Color.setSemiTransparente(0.2f)));
-tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, 1.0), Color.setSemiTransparente(0.2f)));
-
- ///7Pilas (derecha)
-tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(3.0, 1.5, -2.8), crearApariencia(228, 199, 124)));
-tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(3.0, 1.5, 2.8), crearApariencia(228, 199, 124)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 1.0f, 6.0f, new Vector3d(3.0, 0.5, 0.0), crearApariencia(228, 199, 124)));
 
 
-Vector3d[] posiciones = {
-    // Lado derecho (positivo)
-    new Vector3d(2.5, 0.9, -2.0), new Vector3d(1.5, 0.9, -2.0),
-    new Vector3d(2.5, 0.9, -0.7), new Vector3d(1.5, 0.9, -0.7),
-    new Vector3d(2.5, 0.9, 0.6),  new Vector3d(1.5, 0.9, 0.6),
+        tgSalon.addChild(Pared.crearPared(0.4f, 3.0f, 0.90f, new Vector3d(2.8, 1.5, 0.0), crearApariencia(240, 210, 135)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 0.6f, 6.0f, new Vector3d(3.0, 2.7, 0.0), crearApariencia(228, 199, 124)));
 
-    // Lado izquierdo (negativo)
-    new Vector3d(-1.3, 0.9, -2.0), new Vector3d(-2.3, 0.9, -2.0),
-    new Vector3d(-1.3, 0.9, -0.7), new Vector3d(-2.3, 0.9, -0.7),
-    new Vector3d(-1.3, 0.9, 0.6),  new Vector3d(-2.3, 0.9, 0.6)
-};
+
+        tgSalon.addChild(Pared.crearPared(6.0f, 3.0f, 0.1f, new Vector3d(0.0, 1.5, 3.0), crearApariencia(254, 216, 116)));
+        tgSalon.addChild(Pared.crearPared(3.0f, 1.4f, 0.2f, new Vector3d(0.0, 1.8, -2.9), crearApariencia(255, 255, 255)));
+
+
+        tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, -2.1), Color.setSemiTransparente(0.2f)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, -1.0), Color.setSemiTransparente(0.2f)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, 2.1), Color.setSemiTransparente(0.2f)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 1.4f, 1.1f, new Vector3d(3.0, 1.7, 1.0), Color.setSemiTransparente(0.2f)));
+
+
+        tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(3.0, 1.5, -2.8), crearApariencia(228, 199, 124)));
+        tgSalon.addChild(Pared.crearPared(0.1f, 3.0f, 0.3f, new Vector3d(3.0, 1.5, 2.8), crearApariencia(228, 199, 124)));
+
+            Vector3d[] posiciones = {
+            // Lado derecho (positivo)
+            new Vector3d(2.5, 0.9, -2.0), new Vector3d(1.5, 0.9, -2.0),
+            new Vector3d(2.5, 0.9, -0.7), new Vector3d(1.5, 0.9, -0.7),
+            new Vector3d(2.5, 0.9, 0.6),  new Vector3d(1.5, 0.9, 0.6),
+
+            // Lado izquierdo (negativo)
+            new Vector3d(-1.3, 0.9, -2.0), new Vector3d(-2.3, 0.9, -2.0),
+            new Vector3d(-1.3, 0.9, -0.7), new Vector3d(-2.3, 0.9, -0.7),
+            new Vector3d(-1.3, 0.9, 0.6),  new Vector3d(-2.3, 0.9, 0.6)
+        };
 
 
         for (Vector3d pos : posiciones) {
@@ -112,16 +108,15 @@ Vector3d[] posiciones = {
         Vector3d posMesaContraria = new Vector3d(2.0, 0.1, -2.0);
         Vector3d posSillaContraria = new Vector3d(2.0, 0.1, -2.0);
 
-       Mesa mesaContraria = new Mesa(posMesaContraria);
-Silla sillaContraria = new Silla(posSillaContraria,listaObstaculos);
+        Mesa mesaContraria = new Mesa(posMesaContraria);
+        Silla sillaContraria = new Silla(posSillaContraria,listaObstaculos);
 
-TransformGroup tgContrario = new TransformGroup(); // sin rotación, mira hacia las sillas
-tgContrario.addChild(mesaContraria.getTransformGroup());
-tgContrario.addChild(sillaContraria.getTransformGroup());
+        TransformGroup tgContrario = new TransformGroup(); // sin rotación, mira hacia las sillas
+        tgContrario.addChild(mesaContraria.getTransformGroup());
+        tgContrario.addChild(sillaContraria.getTransformGroup());
 
-// Crear la puerta (Box) y agregarla al tgPuerta
-tgSalon.addChild(Pared.crearPared(1.3f, 2.2f, 0.1f, new Vector3d(-2.4, 1.1, -2.6), crearApariencia(164, 45, 2)));
-//tgSalon.addChild(tgContrario);
+        tgSalon.addChild(Pared.crearPared(1.3f, 2.2f, 0.1f, new Vector3d(-2.4, 1.1, -2.6),
+                crearApariencia(164, 45, 2)));
     }
 
 
