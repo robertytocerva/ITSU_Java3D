@@ -4,7 +4,7 @@ Proyecto Java que utiliza la biblioteca **Java 3D** para renderizar figuras trid
 
 ## 📷 Captura
 
-*(Agrega aquí una imagen del proyecto en ejecución)*
+*(Pediente)*
 
 ---
 
