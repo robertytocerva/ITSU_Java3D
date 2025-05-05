@@ -227,11 +227,11 @@ public class Fuera extends BranchGroup{
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
             new Vector3d(0.0, 1.4, 21.3),crearApariencia(239,149,76), "paredFrontalFondo", obstaculos));
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
-            new Vector3d(0.0, 5.0, 21.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos)); ////
+            new Vector3d(0.0, 5.0, 21.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos));
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
             new Vector3d(-8.9, 1.4, 21.3),crearApariencia(239,149,76), "paredFrontalFondo", obstaculos));
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
-            new Vector3d(-8.9, 5.0, 21.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos)); ///////// UTILIZAR PARA SEPARAR OFICINAS
+            new Vector3d(-8.9, 5.0, 21.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos));
     
     tgSalon.addChild(Pared.crearParedConColision(2.9f, 1.5f, 0.1f,
             new Vector3d(-4.5, 0.8, 21.3), crearApariencia(239,149,76), "ventanaAbajo", obstaculos )); // no tocar
@@ -252,12 +252,12 @@ public class Fuera extends BranchGroup{
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
             new Vector3d(0.0, 1.4, -9.3),crearApariencia(239,149,76), "paredFrontalFondo", obstaculos));
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
-            new Vector3d(0.0, 5.0, -9.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos)); ////
+            new Vector3d(0.0, 5.0, -9.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos));
 
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
             new Vector3d(-8.9, 1.4, -9.3),crearApariencia(239,149,76), "paredFrontalFondo", obstaculos));
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
-            new Vector3d(-8.9, 5.0, -9.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos)); ///////// UTILIZAR PARA SEPARAR OFICINAS
+            new Vector3d(-8.9, 5.0, -9.3), crearApariencia(239,149,76), "paredSeparadoraOficinas", obstaculos));
     
     tgSalon.addChild(Pared.crearParedConColision(2.9f, 1.5f, 0.1f,
             new Vector3d(-4.5, 0.8, -9.3), crearApariencia(239,149,76), "ventanaAbajo", obstaculos )); // no tocar
@@ -280,7 +280,7 @@ public class Fuera extends BranchGroup{
     tgSalon.addChild(Pared.crearPared(3.0f, 1.0f, 0.1f,
             new Vector3d(-4.3, 2.2, -9.4), Color.setSemiTransparente(0.1f)));
 
-    addPointLight(0.0f, 35.0f, 10.0f, 116*luz, 128*luz, 129*luz);// ilumina la parte de arriba
+        addPointLight(0.0f, 35.0f, 10.0f, 116*luz, 128*luz, 129*luz);// ilumina la parte de arriba
         addPointLight(10.0f, 10.0f, 1.0f, 116*luminosidad, 128*luminosidad, 129*luminosidad);// ilumnina la parte de abajo
         addPointLight(10.0f, -10.0f, -5.0f, 116*luminosidad, 128*luminosidad, 129*luminosidad);
         addPointLight(0.0f, -30.0f, 05.0f, 116*luz, 128*luz, 129*luz);

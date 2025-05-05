@@ -23,7 +23,7 @@ public class Tope {
             ancho,
             alto,
             profundo,
-            new Vector3d(0.0, 0.0, 0.0), // relativo al centro del tope
+            new Vector3d(0.0, 0.0, 0.0),
             apariencia,
             "Tope",
             listaObstaculos

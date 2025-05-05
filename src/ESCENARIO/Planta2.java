@@ -58,7 +58,7 @@ public class Planta2 {
         Cubiculo2 cubiculo2 = new Cubiculo2(obstaculos2);
         tgPlanta.addChild(crearTG(cubiculo2.getTransformGroup(), new Vector3d(-4.0, 0.0, -9.9)));
 
-        wc banio = new wc(obstaculos2, new Vector3d(-9.0, -0.6, 0.0)); // ✔️
+        wc banio = new wc(obstaculos2, new Vector3d(-9.0, -0.6, 0.0));
         tgPlanta.addChild(banio);
 
 

@@ -122,7 +122,7 @@ public class SalonD extends BranchGroup{
     }
    
     tgSalon.addChild(Pared.crearPared(1.3f, 2.2f, 0.1f, new Vector3d(-2.4, 1.1, 2.6),
-            crearApariencia(164, 45, 2)));/// puerta
+            crearApariencia(164, 45, 2)));
 
     
         tgSalon.addChild(tgContrario);

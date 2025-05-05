@@ -2,7 +2,6 @@ package Muebles;
 
 import ESCENARIO.Color;
 import colisiones.ObjetoConColision;
-import com.sun.j3d.utils.geometry.Box;
 import javax.media.j3d.*;
 import javax.vecmath.*;
 import colisiones.Pared;
@@ -26,13 +25,11 @@ private boolean puertaAbierta = false;
         tgSalon.addChild(Pared.crearParedConColision(1.3f, 2.2f, 0.1f, new
                 Vector3d(2.5, 1.1, 2.6), crearApariencia(164, 45, 2), "puertaNuevaDer", listaObstaculos));
        
-        // Pared trasera (nuevo pizarrón)
         tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f, new
                 Vector3d(0.0, 1.5, -3.0), crearApariencia(254, 216, 116), "paredPizarron", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(3.0f, 1.4f, 0.2f, new
                 Vector3d(0.0, 1.8, 2.9), crearApariencia(255, 255, 255), "pizarronCentro", listaObstaculos));
 
-        // Pared derecha (donde ahora va la puerta)
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 0.3f, new
                 Vector3d(3.0, 1.5, 2.8), crearApariencia(228, 199, 124), "pilarPuertaDer1", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 4.3f, new
@@ -43,7 +40,6 @@ private boolean puertaAbierta = false;
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 0.8f, 1.3f, new
                 Vector3d(3.0, 2.6, 2.0), crearApariencia(228, 199, 124), "puertaSuperiorDer", listaObstaculos));
 
-        // Pared izquierda reflejada (Z invertido)
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.0f, 6.0f, new
                 Vector3d(-3.0, 0.5, 0.0), crearApariencia(228, 199, 124), "paredInferiorIzq", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.4f, 3.0f, 0.90f, new
@@ -51,11 +47,9 @@ private boolean puertaAbierta = false;
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 0.6f, 6.0f, new
                 Vector3d(-3.0, 2.7, 0.0), crearApariencia(228, 199, 124), "paredSuperiorIzq", listaObstaculos));
 
-        // Pared del frente (ahora al fondo)
         tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f, new
                 Vector3d(0.0, 1.5, 3.0), crearApariencia(254, 216, 116), "paredFrontal", listaObstaculos));
 
-        // Ventanas reflejadas
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.4f, 1.1f, new
                 Vector3d(-3.0, 1.7, 2.1), Color.setSemiTransparente(0.2f), "ventanaRef1", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.4f, 1.1f, new
@@ -65,7 +59,6 @@ private boolean puertaAbierta = false;
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.4f, 1.1f, new
                 Vector3d(-3.0, 1.7, -1.0), Color.setSemiTransparente(0.2f), "ventanaRef4", listaObstaculos));
 
-        // Pilas reflejadas también
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 0.3f, new
                 Vector3d(-3.0, 1.5, 2.8), crearApariencia(228, 199, 124), "pilarRef1", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 0.3f, new
@@ -73,12 +66,10 @@ private boolean puertaAbierta = false;
 
 
         Vector3d[] posiciones = {
-            // Columna izquierda (sin cambio)
             new Vector3d(-2.3, 0.9, -2.0), new Vector3d(-1.3, 0.9, -2.0),
             new Vector3d(-2.3, 0.9, -0.7), new Vector3d(-1.3, 0.9, -0.7),
             new Vector3d(-2.3, 0.9, 0.6),  new Vector3d(-1.3, 0.9, 0.6),
 
-            // Columna derecha (pegadas más a la pared)
             new Vector3d(1.5, 0.9, -2.0), new Vector3d(2.5, 0.9, -2.0),
             new Vector3d(1.5, 0.9, -0.7), new Vector3d(2.5, 0.9, -0.7),
             new Vector3d(1.5, 0.9, 0.6),  new Vector3d(2.5, 0.9, 0.6)
@@ -103,7 +94,6 @@ private boolean puertaAbierta = false;
         Mesa mesaContraria = new Mesa(posMesaContraria);
         Silla sillaContraria = new Silla(posSillaContraria,listaObstaculos);
 
-        // Rotar mesa y silla contraria
         Transform3D transform = new Transform3D();
         transform.setRotation(new AxisAngle4d(0.0, 1.0, 0.0, Math.PI));
         TransformGroup tgContrario = new TransformGroup(transform);

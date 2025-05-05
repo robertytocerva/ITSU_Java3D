@@ -1,22 +1,13 @@
 package Joystick;
 
 import ESCENARIO.crearEscenaGrafica5;
-import Muebles.Administrativo;
-import Muebles.Cubiculo;
-import Muebles.Cubiculo2;
-import Muebles.SalonD;
-import Muebles.SalonDF;
-import Muebles.SalonIz;
-import Muebles.SalonIzF;
 import Personaje.crearEscenaGrafica4;
-import colisiones.ObjetoConColision;
 import javax.media.j3d.Transform3D;
 import javax.media.j3d.TransformGroup;
 import javax.vecmath.Vector3d;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import javax.vecmath.Point3d;
+
 
 
 public class MovimientoKeyListener implements KeyListener {

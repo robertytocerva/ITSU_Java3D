@@ -10,9 +10,7 @@ import javax.media.j3d.Texture;
 import javax.media.j3d.TextureAttributes;
 import javax.vecmath.Color3f;
 
-/**
- * @author nadia
- */
+
 public class Textura {
     public Appearance crearTexturas (String nomarch)
     {

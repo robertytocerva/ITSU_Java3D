@@ -22,21 +22,18 @@ public class Inodoro {
 
         Appearance colorCeramica = new Color().setColor(255, 255, 255); // Blanco
 
-        // Base del inodoro (más grande)
         tgInodoro.addChild(Pared.crearParedConColision(
             0.6f, 0.375f, 0.6f,
             new Vector3d(0.0, 0.1875, 0.0),
             colorCeramica,
             "baseInodoro", obstaculos));
 
-        // Taza
         tgInodoro.addChild(Pared.crearParedConColision(
             0.45f, 0.225f, 0.45f,
             new Vector3d(0.0, 0.525, 0.0),
             colorCeramica,
             "tazaInodoro", obstaculos));
 
-        // Tanque trasero
         tgInodoro.addChild(Pared.crearParedConColision(
             0.45f, 0.375f, 0.15f,
             new Vector3d(0.0, 0.75, -0.3),

@@ -2,11 +2,6 @@
 package Muebles;
 
 import colisiones.ObjetoConColision;
-import com.sun.j3d.utils.geometry.Box;
-import javax.media.j3d.*;
-import javax.vecmath.*;
-
-import com.sun.j3d.utils.geometry.Box;
 import javax.media.j3d.Appearance;
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.ColoringAttributes;

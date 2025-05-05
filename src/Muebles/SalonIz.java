@@ -23,7 +23,6 @@ public class SalonIz extends BranchGroup {
         
         
         
-        // Pared trasera (nuevo pizarrón)
 
         tgSalon.addChild(Pared.crearParedConColision(1.3f, 2.2f, 0.1f,
                 new Vector3d(2.4, 1.1, -2.6), crearApariencia(164, 45, 2), "puertaRder", listaObstaculos));
@@ -31,7 +30,6 @@ public class SalonIz extends BranchGroup {
                 new Vector3d(0.0, 1.5, -3.0), crearApariencia(254, 216, 116), "prd", listaObstaculos));
 
 
-        // Pared derecha reflejada (Z invertido)
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 0.3f,
                 new Vector3d(3.0, 1.5, -2.8), crearApariencia(228, 199, 124), "pilard1", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 4.3f,
@@ -40,7 +38,6 @@ public class SalonIz extends BranchGroup {
                 new Vector3d(2.8, 1.5, 0.0), crearApariencia(240, 210, 135), "pilarFd", listaObstaculos));
 
 
-        // Pared izquierda reflejada (Z invertido)
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.0f, 6.0f,
                 new Vector3d(-3.0, 0.5, 0.0), crearApariencia(228, 199, 124), "paredInfIIz", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.4f, 3.0f, 0.90f,
@@ -48,11 +45,9 @@ public class SalonIz extends BranchGroup {
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 0.6f, 6.0f,
                 new Vector3d(-3.0, 2.7, 0.0), crearApariencia(228, 199, 124), "paredSupIzq", listaObstaculos));
 
-        // Pared del frente (ahora al fondo)
         tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
                 new Vector3d(0.0, 1.5, 3.0), crearApariencia(254, 216, 116), "paredFront", listaObstaculos));
 
-        // Ventanas reflejadas
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.4f, 1.1f,
                 new Vector3d(-3.0, 1.7, 2.1), Color.setSemiTransparente(0.2f), "ventana1", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.4f, 1.1f,
@@ -62,20 +57,16 @@ public class SalonIz extends BranchGroup {
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 1.4f, 1.1f,
                 new Vector3d(-3.0, 1.7, -1.0), Color.setSemiTransparente(0.2f), "ventanaR4", listaObstaculos));
 
-        // Pilas reflejadas también
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 0.3f,
                 new Vector3d(-3.0, 1.5, 2.8), crearApariencia(228, 199, 124), "pilarR3", listaObstaculos));
         tgSalon.addChild(Pared.crearParedConColision(0.1f, 3.0f, 0.3f,
                 new Vector3d(-3.0, 1.5, -2.8), crearApariencia(228, 199, 124), "pilarR4", listaObstaculos));
 
-        // Mesas y sillas reflejadas hacia atrás (Z invertido)
         Vector3d[] posiciones = {
-        // Columna derecha reflejada (pegada pared, valores positivos)
         new Vector3d(2.5, 0.9, -2.0), new Vector3d(1.5, 0.9, -2.0),
         new Vector3d(2.5, 0.9, -0.7), new Vector3d(1.5, 0.9, -0.7),
         new Vector3d(2.5, 0.9, 0.6),  new Vector3d(1.5, 0.9, 0.6),
 
-        // Columna izquierda reflejada (valores negativos)
         new Vector3d(-1.3, 0.9, -2.0), new Vector3d(-2.3, 0.9, -2.0),
         new Vector3d(-1.3, 0.9, -0.7), new Vector3d(-2.3, 0.9, -0.7),
         new Vector3d(-1.3, 0.9, 0.6),  new Vector3d(-2.3, 0.9, 0.6)
@@ -91,7 +82,6 @@ public class SalonIz extends BranchGroup {
 
             tgSalon.addChild(mesa.getTransformGroup());
 
-            // Voltear silla hacia pizarrón
            Transform3D rotSilla = new Transform3D();
             rotSilla.setRotation(new AxisAngle4d(0, 1, 0, Math.PI));
             TransformGroup tgSilla = new TransformGroup(rotSilla);

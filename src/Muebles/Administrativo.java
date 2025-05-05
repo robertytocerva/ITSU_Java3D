@@ -30,11 +30,11 @@ public class Administrativo {
    if (conPiso) {
 
         tgSalon.addChild(Pared.crearPared(09.0f, 0.50f, 25.0f,
-                new Vector3d(-1.5, -0.2, 0.0), crearApariencia(160, 160, 160)));///////////ACTIVAR PISO SEGUNDA PLANTA
+                new Vector3d(-1.5, -0.2, 0.0), crearApariencia(160, 160, 160)));
    }
 
     tgSalon.addChild(Pared.crearParedConColision(0.1f, 2.2f, 1.3f,
-            new Vector3d(-3.0, 1.1, 2.0), crearApariencia(164, 45, 2), "puertaIzq", obstaculos));/////////puerta
+            new Vector3d(-3.0, 1.1, 2.0), crearApariencia(164, 45, 2), "puertaIzq", obstaculos));
 
 
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
@@ -49,7 +49,7 @@ public class Administrativo {
 
 
     tgSalon.addChild(Pared.crearParedConColision(0.1f, 0.6f, 8.0f,
-            new Vector3d(3.1, 2.7, 0.0), crearApariencia(228, 199, 124), "paredArribaDer", obstaculos));///////posible linea  a utilizar para exteriores
+            new Vector3d(3.1, 2.7, 0.0), crearApariencia(228, 199, 124), "paredArribaDer", obstaculos));
 
     // Pared del frente (amarilla)
     tgSalon.addChild(Pared.crearParedConColision(6.0f, 3.0f, 0.1f,
@@ -79,7 +79,6 @@ public class Administrativo {
             Mesa mesaContraria = new Mesa(posMesaContraria);
             Silla sillaContraria = new Silla(posSillaContraria,obstaculos);
 
-            // Rotar mesa y silla contraria
             Transform3D transform = new Transform3D();
             transform.setRotation(new AxisAngle4d(0.0, 1.0, 0.0, Math.PI));
             TransformGroup tgContrario = new TransformGroup(transform);

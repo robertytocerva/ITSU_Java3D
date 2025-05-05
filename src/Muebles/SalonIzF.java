@@ -2,7 +2,6 @@ package Muebles;
 
 import ESCENARIO.Color;
 import colisiones.ObjetoConColision;
-import com.sun.j3d.utils.geometry.Box;
 import javax.media.j3d.*;
 import javax.vecmath.*;
 import colisiones.Pared;
@@ -94,7 +93,6 @@ public class SalonIzF extends BranchGroup {
 
             tgSalon.addChild(mesa.getTransformGroup());
 
-            // Voltear silla hacia pizarrón
            Transform3D rotSilla = new Transform3D();
             rotSilla.setRotation(new AxisAngle4d(0, 1, 0, Math.PI));
             TransformGroup tgSilla = new TransformGroup(rotSilla);
@@ -104,7 +102,6 @@ public class SalonIzF extends BranchGroup {
             tgSalon.addChild(tgSilla);
         }
 
-        // Mesa y silla contraria reflejada (ajustada en Z también)
         Vector3d posMesaContraria = new Vector3d(2.0, 0.1, -2.0);
         Vector3d posSillaContraria = new Vector3d(2.0, 0.1, -2.0);
 
